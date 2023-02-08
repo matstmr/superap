@@ -1,0 +1,521 @@
+@font-face {
+    font-family: "OpenSans-Semibold";
+    src: url("C:/Users/matst/OneDrive/Bureau/Cefim/projet-superap/web fonts/opensans_semibold_macroman/OpenSans-Semibold-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("OpenSans-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url("OpenSans-Bold-webfont.woff") format("woff");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    background-color: #00000000;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    background-color: #DD5555;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: "OpenSans", sans-serif;
+}
+
+nav>.logo>img {
+    margin: 10px 15px 10px 0px;
+}
+
+nav>.propos,
+nav>.services,
+nav>.equipe {
+    margin: 10px 15px 10px 15px;
+}
+
+nav>.propos>p>a,
+nav>.services>a,
+nav>.equipe>a,
+nav>.contact>a {
+    color: #FFFFFF;
+}
+
+nav>.propos {
+    background-color: rgba(0, 0, 0, 0.25);
+    margin: 0;
+    padding: 20px;
+}
+
+
+/**** Menu Burger ****/
+
+.nav-menu-burger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    background: #DD5555;
+    display: none;
+    border-left: 1px solid #fff;
+    height: 100vh;
+}
+
+.nav-burger {
+    margin-left: 10px;
+}
+
+.nav-burger .nav-burger-list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 75%;
+}
+
+.nav-burger .nav-burger-list .nav-burger-item {
+    padding: 10px 0 10px 0;
+}
+
+.nav-burger .nav-burger-list .nav-burger-item .nav-burger-link {
+    color: white;
+    padding-right: 15px;
+    font-size: 1.1em;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.nav-menu-burger.active {
+    display: block;
+}
+
+.ligne {
+    width: 50%;
+    height: 1.5px;
+    background-color: #fff;
+}
+
+.burger {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 11;
+    display: none;
+    position: relative;
+    margin-right: 10%;
+}
+
+.burger span {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.burger span::before,
+.burger span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.1s ease-in-out;
+}
+
+.burger span::before {
+    transform: translateY(-10px);
+}
+
+.burger span::after {
+    transform: translateY(10px);
+}
+
+.burger.active span {
+    background-color: transparent;
+}
+
+.burger.active span::before {
+    transform: translateY(0px) rotateZ(45deg);
+}
+
+.burger.active span::after {
+    transform: translateY(0px) rotateZ(-45deg);
+}
+
+@media screen and (max-width: 600px) {
+
+    .services,
+    .contact,
+    .propos,
+    .equipe {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+}
+
+/**** SUPERAP ****/
+.container.superap {
+    background: url(images/about.jpg.png) no-repeat;
+    background-size: cover;
+    height: 658px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.container.superap>h1 {
+    font-family: "Opensans-Bold", sans-serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.container.superap>h4 {
+    font-family: "OpenSans", sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container.superap>.trait {
+    height: 1px;
+    background-color: #FFFFFF;
+    width: 30%;
+}
+
+.container.superap>.bouton-superap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container.superap>.bouton-superap>.content-bouton>.bouton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding-right: 15px;
+    font-family: "OpenSans", sans-serif;
+    font-size: 18px;
+    margin: 25px 10px 0 10px;
+    color: #2E2E2E;
+}
+
+.container.superap>.bouton-superap>.content-bouton>.bouton>img {
+    padding: 15px;
+}
+
+@media screen and (max-width: 547px) {
+    .container.superap>.bouton-superap>.content-bouton {
+        width: 60%;
+    }
+
+    .container.superap>.trait {
+        width: 90%;
+    }
+}
+
+
+/**** ACTIVITES ****/
+.container.activites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+
+.container.activites>.liste-activite {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.container.activites>h2 {
+    color: black;
+    margin: 40px;
+    font-family: "OpenSans-Semibold", sans-serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+.container.activites>.liste-activite>.nom-activite {
+    display: flex;
+    flex-direction: column;
+    color: #2E2E2E;
+    align-items: center;
+    width: 30%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.container.activites>.liste-activite>.nom-activite>p {
+    width: 85%;
+    font-family: "OpenSans", sans-serif;
+    font-size: 16px;
+}
+
+.container.activites>.liste-activite>.nom-activite>h3 {
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+.container.activites>.liste-activite>.nom-activite>.fond-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #DD5555;
+    width: 50px;
+    padding: 35px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+@media screen and (max-width : 1120px) {
+    .container.activites>.liste-activite>.nom-activite {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 547px) {
+    .container.activites>.liste-activite>.nom-activite {
+        width: 100%;
+    }
+}
+
+/**** EQUIPE SUPERAP ****/
+
+.container.equipe-superap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.container.equipe-superap>.origine {
+    background: url(images/team.jpg.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    font-family: "OpenSans-Bold", sans-serif;
+    font-size: 48px;
+    color: #FFFFFF;
+    height: 240px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container.equipe-superap>.origine>h3 {
+    text-align: center;
+}
+
+.container.equipe-superap>.equipe {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.container.equipe-superap>.equipe>.membre-equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container.equipe-superap>.equipe>.membre-equipe>img {
+    border-radius: 50%;
+}
+
+.container.equipe-superap>.equipe>.membre-equipe>h4 {
+    font-family: "OpenSans-Semibold", sans-serif;
+    font-size: 28px;
+    margin: 24px 0;
+}
+
+.container.equipe-superap>.equipe>.membre-equipe>button {
+    background-color: #DD5555;
+    font-family: "OpenSans", sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.container.equipe-superap>.equipe>.membre-equipe>button>img {
+    margin-right: 10px;
+}
+
+
+/**** FOOTER ****/
+.container.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #DD5555;
+    padding-bottom: 50px;
+}
+
+.container.footer>.titre-footer {
+    color: #FFFFFF;
+    margin: 30px 0px;
+    font-family: "OpenSans-Semibold", sans-serif;
+    font-size: 28px;
+    text-align: center;
+}
+
+.container.footer>.formulaire {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container.footer>.formulaire>form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.container.footer>.formulaire>form>.champ-nom,
+.container.footer>.formulaire>form>.champ-mail {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container.footer>.formulaire>form>.champ-nom>label,
+.container.footer>.formulaire>form>.champ-mail>label,
+.container.footer>.formulaire>form>.champ-message>label {
+    font-family: 'OpenSans', sans-serif;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.container.footer>.formulaire>form>.champ-nom>input,
+.container.footer>.formulaire>form>.champ-mail>input {
+    height: 32px;
+}
+
+.container.footer>.formulaire>form>.champ-message>textarea {
+    height: 112px;
+    resize: none;
+}
+
+.container.footer>.formulaire>form>.champ-nom>input,
+.container.footer>.formulaire>form>.champ-mail>input,
+.container.footer>.formulaire>form>.champ-message>textarea {
+    border: none;
+    border-radius: 2px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    padding: 1px;
+}
+
+.container.footer>.formulaire>form>.champ-message {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.container.footer>.formulaire>button {
+    border: none;
+    border-radius: 5px;
+    font-family: 'OpenSans', sans-serif;
+    color: #2E2E2E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    align-self: flex-end;
+}
+
+.container.footer>.formulaire>button:hover {
+    cursor: pointer;
+}
+
+.container.footer>button>img {
+    padding-right: 3px;
+}
+
+@media screen and (max-width: 547px) {
+
+    .container.footer>.formulaire {
+        width: 90%;
+    }
+
+    .container.footer>.formulaire>form>.champ-nom,
+    .container.footer>.formulaire>form>.champ-mail {
+        width: 100%;
+    }
+
+    .container.footer>.formulaire>form>.champ-nom {
+        margin-bottom: 10px;
+    }
+}
